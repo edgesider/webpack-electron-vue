@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron'
+import {app, BrowserWindow} from 'electron'
 
 async function init() {
     const win = new BrowserWindow({
@@ -16,7 +16,7 @@ async function init() {
     win.webContents.on('new-window', e => e.preventDefault())
     win.removeMenu()
     if (!app.isPackaged)
-        win.webContents.openDevTools({ mode: 'detach' })
+        win.webContents.openDevTools({mode: 'detach'})
 
     if (app.isPackaged)
         await win.loadFile('./index.html')

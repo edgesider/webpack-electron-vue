@@ -1,4 +1,4 @@
-const { abs_path } = require('./utils')
+const {abs_path} = require('./utils')
 const merge = require('./webpack.base.config')
 const webpack = require('webpack')
 const config = require('./config')

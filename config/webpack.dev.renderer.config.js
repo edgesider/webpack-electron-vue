@@ -1,8 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const merge = require('./webpack.base.config')
-const { abs_path } = require('./utils')
-const { app_name } = require('./config')
+const {abs_path} = require('./utils')
+const {app_name} = require('./config')
 
 module.exports = merge({
     mode: 'development',
