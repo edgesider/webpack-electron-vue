@@ -5,7 +5,10 @@ module.exports = conf => merge({
     module: {
         rules: [{
             test: /\.ts$/,
-            use: 'ts-loader'
+            loader: 'ts-loader',
+            options: {
+                appendTsSuffixTo: [/\.vue$/]
+            }
         }, {
             test: /\.css$/,
             use: ['style-loader', 'css-loader']
@@ -18,7 +21,7 @@ module.exports = conf => merge({
         }]
     },
     resolve: {
-        extensions: ['.js', '.ts'],
+        extensions: ['.js', '.ts', '.vue'],
         alias: {
             '@': abs_path('src')
         }

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES5",
-    "module": "CommonJS",
+    "module": "esnext",
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "allowJs": true,
@@ -12,7 +12,7 @@
       "@/*": [
         "src/*"
       ]
-    },
+    }
   },
   "include": [
     "src/**/*.ts"

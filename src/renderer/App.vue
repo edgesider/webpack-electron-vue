@@ -5,11 +5,12 @@
     </div>
 </template>
 
-<script>
-    export default {
+<script lang="ts">
+    import Vue from 'vue'
+
+    export default Vue.extend({
         mounted() {
-            console.log('mounted')
-            document.addEventListener('mousewheel', e => {
+            document.addEventListener('mousewheel', (e: WheelEvent) => {
                 if (e.deltaY < 0) {
                     this.counter++;
                 } else {
@@ -20,7 +21,7 @@
         data: () => ({
             counter: 0
         })
-    }
+    })
 </script>
 
 <style>
@@ -36,6 +37,10 @@
         align-items: center;
         flex-direction: column;
         background: #4b8bf5;
+    }
+
+    #app * {
+        user-select: none;
     }
 
     .text {
