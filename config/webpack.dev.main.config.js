@@ -1,11 +1,12 @@
 const {abs_path} = require('./utils')
 const merge = require('./webpack.base.config')
 const webpack = require('webpack')
-const config = require('./config')
+const {wds_port, dev_source_map} = require('./config')
 
 module.exports = merge({
     mode: 'development',
     target: 'electron-main',
+    devtool: dev_source_map,
     entry: './src/main/main.ts',
     output: {
         filename: 'main.js',
@@ -13,8 +14,7 @@ module.exports = merge({
     },
     plugins: [
         new webpack.DefinePlugin({
-            'WDS_PORT': config.wds_port
+            'WDS_PORT': wds_port
         })
     ],
-    devtool: 'source-map'
 })
