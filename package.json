@@ -36,6 +36,9 @@
       ],
       "category": "Utility"
     },
+    "win": {
+      "target": ["portable"]
+    },
     "files": [
       "package.json",
       {
