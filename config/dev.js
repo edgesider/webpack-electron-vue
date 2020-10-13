@@ -25,9 +25,11 @@ const {run_webpack} = require("./utils");
         console.log('[WDS] started')
 
         console.log('[App] starting...')
-        const app = spawn('electron dist/main.js', {
+        const app = spawn('electron', ['dist/main.js',
+            (app_conf.pause_at_start ? '--inspect-brk' : '--inspect') + `=${app_conf.main_debug_port}`,
+            `--remote-debugging-port=${app_conf.renderer_debug_port}`,
+        ], {
             stdio: 'inherit',
-            shell: true
         })
         app.on("close", () => {
             console.log('[App] stopped')
